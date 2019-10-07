@@ -1,0 +1,52 @@
+<div id="app">
+        <div class="container">
+      
+      
+         <div class="row">
+            <button type="submit" class="btn btn-primary" v-on:click="createQRCode">Create QR Code</button>
+          </div>
+          
+          <div class="row">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="col">QR Code</th> 
+                  <th class="col">NKKK No.</th> 
+                  <th class="col">Group No.</th>
+                  <th class="col">TEMP No.</th>
+                  <th class="col">Net Weight</th>
+                  <th class="col">Producer</th>
+                  <th class="col">Cast No.</th>
+                  <th class="col">Si</th>
+                  <th class="col">Fe</th>
+                  <th class="col">Mg</th>
+                </tr>
+              </thead>
+      
+              <tbody>
+                <tr is=productList v-for="list in lists" v-bind:lot="list"></tr>
+              </tbody>
+            </table>
+          </div>
+      
+          <div class="row">
+            <script src="jquery.min.js"></script>
+            <script src="jquery.qrcode.min.js"></script>
+            <script type="text/JavaScript">
+              /* $(function(){ $("#productcode").html(""); $("#productcode").qrcode({width:80, height:80, text:'"NKKK":"8ZN1427","GroupNo":"A","TEMPNo":169,"NW":1032.9,"Producer":"Rusal","CastNo":335492,"Si":0.03,"Fe":0.04,"Co":0.02"'}); }); */
+              </script>
+            <div class="col-md-2" id="productcode">QR Products</div>
+            <pre>{{$data.lists}}</pre>
+            <div class="col-md-10">DummySpace</div>
+          </div>
+      
+        </div>
+        <pre>{{$data.lists}}</pre>
+      </div>
+      
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+      <script src="./createQR.js"></script>
