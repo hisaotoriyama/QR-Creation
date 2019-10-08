@@ -1,11 +1,12 @@
 Vue.component("productList", {
     props: ["lot"],
-    template: "<tr><td>{{qrCode}}</td><td>{{NKKK}}</td><td>{{GroupNo}}</td><td>{{TEMPNo}}</td><td>{{NW}}</td><td>{{CastNo}}</td><td>{{Si}}</td><td>{{Fe}}</td><td>{{Co}}</td></tr>",
+    template: "<tr><td id="qrCode">{{createQR}}</td><td>{{NKKK}}</td><td>{{GroupNo}}</td><td>{{TEMPNo}}</td><td>{{NW}}</td><td>{{CastNo}}</td><td>{{Si}}</td><td>{{Fe}}</td><td>{{Co}}</td></tr>",
     computed: {
       createQR: function(){
              $("#qrCode").html("");
               $("#qrCode").qrcode({width:80, height:80, text:JSON.stringify(this.lot)})
             }, 
+
     NKKK: function() {
         return this.lot.NKKK;
       },
