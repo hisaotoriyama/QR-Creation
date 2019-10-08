@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+  </head>
+
+  <body>
 <div id="app">
         <div class="container">
       
@@ -24,7 +31,7 @@
               </thead>
       
               <tbody>
-                <tr is=productList v-for="list in lists" v-bind:lot="list"></tr>
+                <tr is="productList" v-for="list in lists" v-bind:lot="list"></tr>
               </tbody>
             </table>
           </div>
@@ -50,3 +57,7 @@
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
       <script src="./createQR.js"></script>
+
+    </body>
+
+</html>
