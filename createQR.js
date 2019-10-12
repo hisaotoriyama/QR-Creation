@@ -1,8 +1,8 @@
 Vue.component("productList", {
   props: ["lot"],
-  template: '<tr><td :id="idn"></td><td>{{NKKK}}</td><td>{{GroupNo}}</td><td>{{TEMPNo}}</td><td>{{NW}}</td><td>{{CastNo}}</td><td>{{Si}}</td><td>{{Fe}}</td><td>{{Co}}</td></tr>',
+  template: '<tr><td v-bind:id="idqr"></td><td>{{NKKK}}</td><td>{{GroupNo}}</td><td>{{TEMPNo}}</td><td>{{NW}}</td><td>{{CastNo}}</td><td>{{Si}}</td><td>{{Fe}}</td><td>{{Co}}</td></tr>',
   computed: {
-    idn: function () {
+    idqr: function () {
       return "qrcode-" + this.lot.NKKK + "-" + this.lot.CastNo;
     },
     NKKK: function () {
@@ -31,9 +31,9 @@ Vue.component("productList", {
     }
   },
   mounted: function () {
-    let id = "#qrcode-" + this.lot.NKKK + "-" + this.lot.CastNo;
-    $(id).html("");
-    $(id).qrcode({ width: 160, height: 160, text: JSON.stringify(this.lot) })
+    let idqr = "#qrcode-" + this.lot.NKKK + "-" + this.lot.CastNo;
+    $(idqr).html("");
+    $(idqr).qrcode({ width: 90, height: 90, text: JSON.stringify(this.lot) })
   }
 })
 
@@ -61,10 +61,29 @@ new Vue({
       Si: 0.03,
       Fe: 0.04,
       Co: 0.02
+    },
+    {
+      NKKK: "8ZN1427",
+      GroupNo: "A",
+      TEMPNo: 170,
+      NW: 1002.5,
+      Producer: "Rusal",
+      CastNo: 335493,
+      Si: 0.02,
+      Fe: 0.05,
+      Co: 0.01
+    },
+    {
+      NKKK: "8ZN1427",
+      GroupNo: "A",
+      TEMPNo: 171,
+      NW: 1025.9,
+      Producer: "Rusal",
+      CastNo: 335494,
+      Si: 0.03,
+      Fe: 0.03,
+      Co: 0.03
     }
     ]
-  },
-  methods: {
-    createQRCode: function () { }
   }
 })
