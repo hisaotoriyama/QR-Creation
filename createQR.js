@@ -88,7 +88,7 @@ new Vue({
   },
   methods: {
     createQRCode: function() {
-
+      
     }
   }
 })
