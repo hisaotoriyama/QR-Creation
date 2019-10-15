@@ -85,5 +85,10 @@ new Vue({
       Co: 0.03
     }
     ]
+  },
+  methods: {
+    createQRCode: function() {
+
+    }
   }
 })
